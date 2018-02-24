@@ -42,7 +42,7 @@ $(document).ready(function () {
         id: 'Temperature',
         type: 'linear',
         scaleLabel: {
-          labelString: 'Temperature(C)',
+          labelString: 'Cuenta',
           display: true
         },
         position: 'left',
