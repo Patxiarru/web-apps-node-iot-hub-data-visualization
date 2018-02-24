@@ -78,7 +78,7 @@ $(document).ready(function () {
         return;
       }
       timeData.push(obj.time);
-      temperatureData.push(obj.ramp1);
+      ramp1Data.push(obj.ramp1);
       // only keep no more than 50 points in the line chart
       const maxLen = 50;
       var len = timeData.length;
