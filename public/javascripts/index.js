@@ -6,8 +6,8 @@ $(document).ready(function () {
     datasets: [
       {
         fill: false,
-        label: 'Ramp1',
-        yAxisID: 'Ramp1',
+        label: 'Channel1.Device1.Ramp1',
+        yAxisID: 'Channel1.Device1.Ramp1',
         borderColor: "rgba(255, 204, 0, 1)",
         pointBoarderColor: "rgba(255, 204, 0, 1)",
         backgroundColor: "rgba(255, 204, 0, 0.4)",
@@ -26,7 +26,7 @@ $(document).ready(function () {
     },
     scales: {
       yAxes: [{
-        id: 'Ramp1',
+        id: 'Channel1.Device1.Ramp1',
         type: 'linear',
         scaleLabel: {
           labelString: 'Cuenta',
@@ -54,11 +54,11 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      if(!obj.time || !obj.Ramp1) {
+      if(!obj.time || !obj.Channel1.Device1.Ramp1) {
         return;
       }
       timeData.push(obj.time);
-      ramp1Data.push(obj.ramp1);
+      ramp1Data.push(obj.Channel1.Device1.Ramp1);
       // only keep no more than 50 points in the line chart
       const maxLen = 50;
       var len = timeData.length;
