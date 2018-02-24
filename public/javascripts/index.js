@@ -1,6 +1,5 @@
 $(document).ready(function () {
   var timeData = [],
-    temperatureData = [],
     humidityData = [],
     ramp1Data=[];
   var data = {
@@ -8,14 +7,14 @@ $(document).ready(function () {
     datasets: [
       {
         fill: false,
-        label: 'Temperature',
-        yAxisID: 'Temperature',
+        label: 'Ramp1',
+        yAxisID: 'Ramp1',
         borderColor: "rgba(255, 204, 0, 1)",
         pointBoarderColor: "rgba(255, 204, 0, 1)",
         backgroundColor: "rgba(255, 204, 0, 0.4)",
         pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
-        data: temperatureData
+        data: ramp1Data
       },
       {
         fill: false,
@@ -39,7 +38,7 @@ $(document).ready(function () {
     },
     scales: {
       yAxes: [{
-        id: 'Temperature',
+        id: 'Ramp1',
         type: 'linear',
         scaleLabel: {
           labelString: 'Cuenta',
@@ -75,17 +74,17 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      if(!obj.time || !obj.temperature) {
+      if(!obj.time || !obj.ramp1) {
         return;
       }
       timeData.push(obj.time);
-      temperatureData.push(obj.temperature);
+      temperatureData.push(obj.ramp1);
       // only keep no more than 50 points in the line chart
       const maxLen = 50;
       var len = timeData.length;
       if (len > maxLen) {
         timeData.shift();
-        temperatureData.shift();
+        ramp1Data.shift();
       }
 
       if (obj.humidity) {
