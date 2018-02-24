@@ -1,7 +1,8 @@
 $(document).ready(function () {
   var timeData = [],
     temperatureData = [],
-    humidityData = [];
+    humidityData = [],
+    ramp1Data=[];
   var data = {
     labels: timeData,
     datasets: [
@@ -33,7 +34,7 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'Temperature & Humidity Real-time Data',
+      text: 'Kepserver: Simulate Driver "Ramp1"',
       fontSize: 36
     },
     scales: {
