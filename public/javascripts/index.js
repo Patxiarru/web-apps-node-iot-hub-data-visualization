@@ -1,6 +1,5 @@
 $(document).ready(function () {
   var timeData = [],
-    humidityData = [],
     ramp1Data=[];
   var data = {
     labels: timeData,
